@@ -9,14 +9,14 @@ async def main():
     load_dotenv()
     config = {
       "mcpServers": {
-        "playwright": {
-          "command": "npx",
-          "args": ["@playwright/mcp@latest"],
-          "env": {
-            "DISPLAY": ":1"
+        "ddg-search": {
+          "command": "uvx",
+          "args": [
+            "-y",
+            "duckduckgo-mcp-server"
+          ]
           }
         }
-      }
     }
     client = MCPClient.from_dict(config)
     llm = ChatGroq(model="deepseek-r1-distill-llama-70b")  
